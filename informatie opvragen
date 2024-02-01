@@ -1,0 +1,46 @@
+SQL Koning 2, Hierin staat wat voor commando's je kunt opvragen 
+
+SELECT, Dit commando wordt gebruikt om gegevens op te vragen uit een database.
+Voorbeeld:
+
+  SELECT * FROM users;
+
+WHERE, Hiermee kun je specifieke rijen selecteren op basis van een bepaalde voorwaarde.
+Voorbeeld:
+
+  SELECT * FROM orders WHERE status = 'completed';
+
+ORDER BY, Gebruikt om het resultaat te sorteren op basis van één of meer kolommen.
+Voorbeeld:
+
+  SELECT * FROM products ORDER BY price DESC;
+
+GROUP BY, Groepeert resultaten op basis van een kolom.
+Voorbeeld:
+
+  SELECT department, COUNT(*) FROM employees GROUP BY department;
+
+JOIN, Combineert rijen uit twee of meer tabellen op basis van een gerelateerde kolom.
+Voorbeeld:
+
+  SELECT orders.order_id, customers.customer_name
+  FROM orders
+  JOIN customers ON orders.customer_id = customers.customer_id;
+
+LIMIT, Beperkt het aantal rijen dat wordt geretourneerd.
+Voorbeeld:
+
+  SELECT * FROM products LIMIT 10;
+
+DISTINCT, Geeft unieke waarden terug van een specifieke kolom.
+Voorbeeld:
+
+  SELECT DISTINCT category FROM products;
+
+COUNT, Telt het aantal rijen dat aan een bepaalde voorwaarde voldoet.
+Voorbeeld:
+
+  SELECT COUNT(*) FROM orders WHERE status = 'pending';
+
+
+
