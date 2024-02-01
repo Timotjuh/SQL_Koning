@@ -1,0 +1,88 @@
+Specifieke bands opvragen, in dit geval 2 bands: 
+ 
+  SELECT * FROM bands limit 2; 
+
+Aangemaakte column naam aanpassen: 
+
+  SELECT id as ‘ID’, name as ‘band name’ from bands;  
+
+Alphabetic volgorde namen: 
+ 
+  SELECT * FROM bands order by name;  
+
+Niet alphabetic namen:  
+  
+  SELECT * FROM bands order by name desc; 
+
+Jaar toevoegen: 
+
+  INSERT into albums (name, release_year, band_id) 
+
+Kolommen waardes geven: 
+
+  VALUES (‘relics’, 2000, 1),  
+  (‘Piraat, 2001, 1), 
+  (‘ XNY’, 2002, 2), 
+  (‘XNY’, null, 3),  
+  (‘Supergaande’, 2009, 3); 
+
+In je tabel alle gegevens van albums inzien: 
+
+  SELECT * FROM albums;  
+
+Alleen de namen:
+
+  SELECT name FROM albums; 
+
+Unieke namen, als er ergens dubbele zijn laat ie die weg: 
+
+  SELECT name FROM albums;SELECT DISTINCT name FROM albums; 
+
+Release year veranderen bij band_id 1: 
+
+  Update albums  
+  set release_year = 1999 
+  WHERE id =1; 
+
+Kiezen aan de hand van een bepaald getal en daarboven: 
+ 
+  SELECT * FROM albums 
+  WHERE release_year <2000;  (Gebruik < & > om lager of hoger dan je getal wilt)  
+   
+Bepaalde letters opzoeken: 
+ 
+  SELECT * FROM albums 
+  WHERE name like ‘%re%’;  (% betekend alles met in dit geval ‘’RE’’) 
+
+Bepaalde letters opzoeken aan de hand van een ID: 
+ 
+  WHERE name like '%pi%' or band_id =1; 
+
+Band opzoeken d.m.v. jaar en ID 
+ 
+  SELECT * FROM albums 
+  WHERE release_year=2001 and band_id =1; 
+   
+  SELECT * FROM albums 
+  WHERE release_year between 2000 and 2008; 
+
+Onbekend jaar nummer: 
+ 
+  SELECT * FROM albums 
+  WHERE release_year is null; 
+
+Verwijder ID’s 
+ 
+  DELETE FROM albums where id=4; 
+
+  
+
+
+
+
+
+
+
+
+
+  
