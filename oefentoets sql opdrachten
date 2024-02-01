@@ -1,0 +1,37 @@
+Hier staan de oefenopdrachten van het examen, tussen de ' staat het commando 
+
+''Laat alle velden van de tabel ‘MemoryUsage’ zien.'' ‘SHOW COLUMNS FROM ‘jouw_table’ 
+
+'' Laat de velden hostname en freememory van de tabel ‘MemoryUsage’ zien, sorteer op freememory van laag naar hoog.''  ‘SELECT hostname, freememory FROM MemoryUsage ORDER BY freememory ASC;’  
+
+''Laat de velden date en freememory van de tabel ‘MemoryUsage’ zien waarvoor geldt dat freememory hoger is dan 5000000.'' 
+
+  SELECT date, freememory 
+  FROM MemoryUsage 
+  WHERE freememory > 5000000; 
+
+''Voeg aan de tabel 'MemoryUsage’ een nieuw record toe. Verzin zelf de waarden voor de velden.  
+LET OP: 
+
+Het veld ID wordt automatisch gevuld. 
+Je moet even uitzoeken hoe je het veld date kunt vullen.'' 
+ 
+  'INSERT INTO MemoryUsage (date, hostname, freememory) 
+  VALUES (NOW(), 'voorbeeld_hostname', 6000000);' 
+
+''Bekijk of het is gelukt'' ‘SELECT * FROM MemoryUsage ORDER BY date DESC LIMIT 1;’ 
+
+''Laat de velden date en freememory van de tabel ‘MemoryUsage’ zien waarvoor geldt dat freememory kleiner is dan de gemiddelde freememory van alle records.'' 
+ 
+  ‘SELECT date, freememory 
+  FROM MemoryUsage 
+  WHERE freememory < (SELECT AVG(freememory) FROM MemoryUsage);’ 
+
+''Laat de velden code, name, region en localname uit de tabel ‘Country’ zien, waarvoor geldt dat het betreffende land niet in de tabel 'City’ voorkomt.'' 
+ 
+  ‘SELECT c.code, c.name, c.region, c.localname FROM Country c LEFT JOIN City ci ON c.code = ci.countrycode WHERE ci.countrycode IS NULL;’
+  
+
+
+
+
