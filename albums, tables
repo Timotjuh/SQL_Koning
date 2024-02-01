@@ -1,0 +1,65 @@
+SQL koning, misschien dat sommige ( ) ; , niet goed staan, als het niet werkt kijk daar dan even naar. 
+
+SQL Database aanmaken:
+
+  CREATE DATABASE (naam);  
+  Use (naam database)
+
+SQL Tabel aanmaken:
+
+  CREATE table (naam) (  
+  test_kolom INT ); 
+
+Extra tabel toevoegen:
+
+  ALTER TABLE naam add test2_kolom varchar(200); 
+
+Table aanmaken voor albums:
+
+  CREATE TABLE bands ( 
+  id INT not null auto_increment, 
+  name varchar(255) not null, 
+  primary key (ID) 
+  );
+
+  CREATE TABLE albums ( 
+  id INT not null auto_increment, 
+  name varchar(255) not null, 
+  release_year INT,  
+  band_id INT not null, 
+  primary key (id), 
+  foreign key (band_ID) references bands 
+  );
+
+Table verwijderen
+
+  DROP table (naam)
+  
+
+  CREATE TABLE albums ( 
+  id INT not null auto_increment, 
+  name varchar(255) not null, 
+  release_year INT,  
+  band_id INT not null, 
+  primary key (id), 
+  foreign key (band_ID) references bands 
+  );
+
+Namen invoegen bij albums:
+
+  INSERT INTO bands (name) 
+  value(‘bandnaam’);  
+  INSERT INTO bands (name) 
+  VALUE(‘Coldplay’);  
+
+
+Twee namen tegelijk aanmaken in albums: 
+
+  INSERT INTO bands(name) 
+  VALUES(‘naam’), (‘naam’); 
+
+
+
+
+  
+    
